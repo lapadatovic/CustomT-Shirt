@@ -12,6 +12,9 @@ import {AIPicker, ColorPicker, CustomButton, FilePicker, Tab} from '../component
 
 const Customizer = () => {
   const snap = useSnapshot(state);
+
+  // show tab content depending on the active tab
+
   return (
     <AnimatePresence>
       {!snap.intro && (
@@ -56,7 +59,7 @@ const Customizer = () => {
                     key={tab.name}
                     tab={tab}
                     isFilterTab
-                    isActiveTab =''
+                    isActiveTab = 'true'
                     handleClick={() => { }}
                   />
                 ))}

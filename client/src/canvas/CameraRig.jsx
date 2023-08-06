@@ -43,7 +43,7 @@ function CameraRig({ children }) {
     // Set the model pozition and smoothly rotation
     easing.dampE(
       group.current.rotation,
-      [state.pointer.y / 10, state.pointer.x / 20, 0],
+      [state.pointer.y / 7, state.pointer.x / 5, 0],
       0.25,
       delta
     )
