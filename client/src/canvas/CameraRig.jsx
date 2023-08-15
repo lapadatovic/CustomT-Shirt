@@ -17,27 +17,25 @@ function CameraRig({ children }) {
     const isMobile     = window.innerWidth <=600;
 
     // Set the initial position of the model
-    let targetPositon = [-0.3, 1, 2];
+    let targetPosition = [-0.3, 0, 2];
     if(snap.intro) {
-      if(isBreakpoint) targetPositon = [0,0,1];
-      if(xlBreakpoint) targetPositon = [-0.5,0,1];
+      if(isBreakpoint) targetPosition = [0,0,2];
+      if(xlBreakpoint) targetPosition = [-0.5,0,1];
 
-      if(isMobile) targetPositon = [0,1.1,2];
+      if(isMobile) targetPosition = [0, 0.2, 2.5];
       
     }else {
-      if(isMobile) targetPositon = [0,0,2.5];
-
-      // if(xlBreakpoint) targetPositon =  [-0.5,0,1];
-
+      if(isMobile) targetPosition = [0,0,2.5];
+      
       if(isBreakpoint) {
-        targetPositon = [0,0,1.5];
+        targetPosition = [0,0,1.5];
       }else {
-        targetPositon = [0,0,1];
+        targetPosition = [0,0,1];
       }
     }
 
     // Set model camera position
-    easing.damp3(state.camera.position,targetPositon,0.25,delta)
+    easing.damp3(state.camera.position,targetPosition,0.25,delta)
 
 
     // Set the model pozition and smoothly rotation
