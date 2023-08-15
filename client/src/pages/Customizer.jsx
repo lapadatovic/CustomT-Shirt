@@ -71,7 +71,21 @@ const Customizer = () => {
     }
   }
 
+  //handleSubmit function
+  const handleSubmit = async (type) => {
+    if(!prompt) return alert('Please enter a prompt');
 
+    try {
+      // Call our backend to genereate an AI Image
+      
+    } catch (error) {
+      alert(error);
+    } finally {
+      setGeneratingImg(false);
+      // setPrompt('');
+      setActiveEditorTab('');
+    }
+  }
   // show tab content depending on the active tab
   const generateTabContent = () => {
     switch(activeEditorTab){
@@ -86,7 +100,12 @@ const Customizer = () => {
               />;
 
       case 'aipicker':
-        return <AIPicker />;
+        return <AIPicker 
+                prompt={prompt}
+                setPrompt={setPrompt}
+                generatingImg={generatingImg}
+                handleSubmit={handleSubmit}
+              />;
       
       default: 
         return null;
