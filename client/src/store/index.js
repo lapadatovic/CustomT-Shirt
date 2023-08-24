@@ -1,7 +1,7 @@
 import { proxy } from "valtio";
 
 const state = proxy ({
-    // intro is used for checking if we are on home page or not
+    // intro is used for checking if we are on home page
     intro: true,
     color: "#A28743",
     // Are we displaying LOGO on shirt
